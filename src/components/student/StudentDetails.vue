@@ -4,7 +4,9 @@
   <div v-if="student">
     <h2>{{student.name}}</h2>
   </div>
-  <div v-else>Loading ... </div>
+  <div v-else>Loading ... 
+    this.$router.push({ name: 'login' })
+  </div>
 </div>
 
 </template>
