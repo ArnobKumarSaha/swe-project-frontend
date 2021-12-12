@@ -39,7 +39,7 @@ html,
   transition: all .3s;
 }
 .inner-block static{
-  width: 450px;
+  width: 800px;
 }
 
 .vertical-center .form-control:focus {

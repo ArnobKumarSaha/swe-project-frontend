@@ -9,13 +9,19 @@
                 SUST Project manager
             </a>
             -->
-           <router-link class="btn pr-3" to="/">SUST Project manager</router-link>
+           <router-link class="btn pr-3" to="/">SUST Project Manager</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/student">Student</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link pr-3" to="/teacher">Teacher</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/project">Project</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link pr-3" to="/course">Course</router-link>
           </li>
         </ul>
 

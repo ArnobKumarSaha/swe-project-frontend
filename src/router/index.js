@@ -57,21 +57,26 @@ var teacherRoutes = [
   }
 ]
 
-var authRoutes = [
+var authRoutes = [  
   {
     path: '/signup',
     name: 'Signup',
-    component: () => import('../components/Signup.vue')
+    component: () => import('../components/auth/Signup.vue')
+  },
+  {
+    path: '/signup-teacher',
+    name: 'Signupteacher',
+    component: () => import('../components/auth/Signupteacher.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../components/Login.vue')
+    component: () => import('../components/auth/Login.vue')
   },
   {
     path: '/forgot-password',
     name: 'Forgot-password',
-    component: () => import('../components/ForgotPassword.vue')
+    component: () => import('../components/auth/ForgotPassword.vue')
   },/*
   {
     path: "/test",
@@ -86,16 +91,30 @@ var authRoutes = [
   },*/
 ]
 
-allRoutes = allRoutes.concat(studentRoutes, teacherRoutes, authRoutes)
+var projectRoutes = [
+  {
+    path: '/project',
+    name: 'Project',
+    component: () => import('../components/project/Projects.vue')
+  },
+  {
+    path: '/myproject',
+    name: 'Myproject',
+    component: () => import('../components/project/Myprojects.vue'),
+    meta: AuthMeta
+  }
+]
+
+allRoutes = allRoutes.concat(studentRoutes, teacherRoutes, authRoutes, projectRoutes)
 
 const routes = allRoutes
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history',  
   base: process.env.BASE_URL,
   routes
 })
 
-var isLoggedIn = false;
+var isLoggedIn = true;
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {

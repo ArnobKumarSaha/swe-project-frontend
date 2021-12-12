@@ -1,16 +1,15 @@
 <template>
-
     <div class="ac-table-container table-container">
     <table class="table ac-table ac-striped is-fullwidth is-dark">
-      <thead>
+        <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>regNo</th>
-          <th>Show Details</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>regNo</th>
+            <th>Show Details</th>
         </tr>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
             <tr v-for="student in students" :key="student._id">
                 <td>{{student.name}}</td>
                 <td>{{student.email}}</td>
@@ -21,9 +20,9 @@
                     </router-link>
                 </td>
             </tr>
-      </tbody>
+        </tbody>
     </table>
-  </div>
+    </div>
 </template>
 
 <script>
