@@ -107,10 +107,34 @@ var projectRoutes = [
     name: 'Myproject',
     component: () => import('../components/project/Myprojects.vue'),
     meta: AuthMeta
+  },
+  {
+    path: '/add-project',
+    name: 'Addproject',
+    component: () => import('../components/project/Addproject.vue')
   }
 ]
 
-allRoutes = allRoutes.concat(studentRoutes, teacherRoutes, authRoutes, projectRoutes)
+var courseRoutes = [
+  {
+    path: '/course',
+    name: 'Course',
+    component: () => import('../components/course/Courses.vue')
+  },
+  {
+    path: '/mycourse',
+    name: 'Mycourse',
+    component: () => import('../components/course/Mycourses.vue'),
+    meta: AuthMeta
+  },
+  {
+    path: '/add-course',
+    name: 'Addcourse',
+    component: () => import('../components/course/Addcourse.vue')
+  }
+]
+
+allRoutes = allRoutes.concat(studentRoutes, teacherRoutes, authRoutes, projectRoutes, courseRoutes)
 
 const routes = allRoutes
 const router = new VueRouter({

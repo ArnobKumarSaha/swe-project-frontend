@@ -63,9 +63,11 @@ export default {
                 console.log("response = ", response)
                 if(response.status === 200) {
                     this.$store.commit('setLog')
-                    // var user = response.data.user
-                    // this.$store.commit('setUser', user)
-                    // console.log("user = ", user)
+                    this.$store.commit('setUser', {
+                        email: this.email,
+                        password: this.password,
+                        typeOfUser: this.typeOfUser
+                    })
                     this.$router.push({ path : '/' });
                 }
             }).catch(err => console.log(err))
