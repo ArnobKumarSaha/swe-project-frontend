@@ -25,15 +25,48 @@
           </li>
         </ul>
 
-        <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="btn btn-outline-primary" to="/signup">Sign up</router-link>
-          </li>
-        </ul>
+        <div v-if="getLoginValue()">
+          <ul class="nav navbar-nav flex-row float-right">
+            <li class="nav-item">
+              <router-link class="nav-link pr-3" to="/logout">Logout</router-link>
+            </li>
+          </ul>
+        </div>
+        <div v-else>
+          <ul class="nav navbar-nav flex-row float-right">
+            <li class="nav-item">
+              <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="btn btn-outline-primary" to="/signup">Sign up</router-link>
+            </li>
+          </ul>
+        </div>
+
 
       </div>
     </nav>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      // isLoggedIn: this.$store.state.isLoggedIn
+    }
+  },
+  // watch: {
+  //   isLoggedIn: {
+  //     immediate: true,
+  //     handler(n){
+  //       console.log("From nav", n)
+  //     }
+  //   }
+  // },
+  methods: {
+    getLoginValue: function(){
+      return this.$store.state.isLoggedIn
+    }
+  }
+}
+</script>

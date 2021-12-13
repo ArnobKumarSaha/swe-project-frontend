@@ -14,9 +14,19 @@
 
 <script>
 import Navigation   from './components/Nav.vue'
+import http from "./Http-comman";  
 export default {
   components: {
     'NavigationBar': Navigation
+  },
+  beforeCreate() {
+    http.get("/isloggedin").then(response => {
+        console.log("response in check = ", response.data)
+        
+        if(response.data.isLoggedIn)
+            this.$store.commit('setLog')
+        else this.$store.commit('unsetLog')
+    }).catch(err => console.log(err))
   }
 }
 

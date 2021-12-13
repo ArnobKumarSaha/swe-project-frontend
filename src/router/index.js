@@ -89,6 +89,11 @@ var authRoutes = [
         }
     }
   },*/
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: () => import('../components/auth/Logout.vue')
+  },
 ]
 
 var projectRoutes = [
@@ -114,12 +119,13 @@ const router = new VueRouter({
   routes
 })
 
-var isLoggedIn = true;
+import store from '../main'
+
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
-    console.log("inside beforeEach func")
-    if (!isLoggedIn) {
+    console.log("inside beforeEach func", store.state.isLoggedIn)
+    if (!store.state.isLoggedIn) {
       next({ name: 'Login' })
     } else {
       next()
