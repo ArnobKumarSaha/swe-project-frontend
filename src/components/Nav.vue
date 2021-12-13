@@ -25,6 +25,15 @@
           </li>
         </ul>
 
+
+        <div v-if="isAdmin()">
+          <ul class="nav navbar-nav flex-row float-right">
+            <li class="nav-item">
+              <router-link class="nav-link pr-3" to="/course">Add Course</router-link>
+            </li>
+          </ul>
+        </div>
+
         <div v-if="getLoginValue()">
           <ul class="nav navbar-nav flex-row float-right">
             <li class="nav-item">
@@ -66,6 +75,12 @@ export default {
   methods: {
     getLoginValue: function(){
       return this.$store.state.isLoggedIn
+    },
+    isAdmin: function() {
+      if(this.$store.state.isLoggedIn){
+        return this.$store.state.currentUser.typeOfuser == "admin"
+      }
+      else return false
     }
   }
 }

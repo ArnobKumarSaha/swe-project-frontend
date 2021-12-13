@@ -112,6 +112,11 @@ var projectRoutes = [
     path: '/add-project',
     name: 'Addproject',
     component: () => import('../components/project/Addproject.vue')
+  },
+  {
+    path: '/projectdetails',
+    name: 'Projectdetails',
+    component: () => import('../components/project/Projectdetails.vue')
   }
 ]
 

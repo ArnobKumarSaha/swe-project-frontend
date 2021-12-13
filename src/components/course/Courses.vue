@@ -9,7 +9,6 @@
                 <th>Name</th>
                 <th>CourseCode</th>
                 <th>Description</th>
-                <th>Teacher</th>
                 <th>year</th>
             </tr>
             </thead>
@@ -18,7 +17,6 @@
                      <td>{{course.name}}</td>
                     <td>{{course.courseCode}}</td>
                     <td>{{course.description}}</td>
-                    <td>{{course.teacherId}}</td>
                     <td>{{course.year}}</td>
                     <td>
                         <router-link :to="{name: 'courseDetails', params: { courseId: course._id }}">

@@ -22,7 +22,7 @@ export default {
           student: null
       }
   },
-  mounted(){
+  beforeCreate(){
       http.get('/student/' + this.regNo)
       .then(res => {
           console.log(res.data)
