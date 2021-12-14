@@ -56,14 +56,14 @@ export default {
             http.post("/student/add-project", {   
                 githubLink: this.githubLink,
                 description: this.description,
-                course: this.course,
+                courseCode: this.course,
                 teacher: this.teacher,
                 studentReg: this.studentReg,
                 name: this.name
                 
             }).then(response => {
                 if(response.status === 200) {
-                    this.$router.push({ path : '/myprojects' });
+                    this.$router.push({ path : '/project' });
                 }
             }).catch(err => console.log(err))
         }

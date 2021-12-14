@@ -1,11 +1,9 @@
 <template>
 <div>
   <h2>The student reg is {{ regNo }}</h2>
-  <div v-if="student">
-    <h2>{{student.name}}</h2>
-  </div>
-  <div v-else>Loading ... 
-    this.$router.push({ name: 'login' })
+  <div>
+    <h3>Arnob kumar saha</h3>
+    <h3>arnob@gmail.com</h3>
   </div>
 </div>
 

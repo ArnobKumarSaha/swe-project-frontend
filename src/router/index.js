@@ -54,7 +54,14 @@ var teacherRoutes = [
     name: 'Teacher',
     component: () => import('../components/teacher/Teachers.vue'),
     meta: AuthMeta
-  }
+  },
+  {
+    path: '/teacher/:regNo',
+    name: 'TeacherDetails',
+    component: () => import('../components/teacher/TeacherDetails.vue'),
+    props: true,
+    meta: AuthMeta  
+  },
 ]
 
 var authRoutes = [  
